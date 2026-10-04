@@ -1,0 +1,227 @@
+export interface Project {
+  id: number;
+  slug: string;
+  title: string;
+  shortDescription: string;
+  fullDescription: string;
+  thumbnail: string;
+  images: string[];
+  technologies: string[];
+  role: string;
+  duration: string;
+  demoLink?: string;
+  githubLink?: string;
+  features: string[];
+  challenges: string[];
+  solution: string;
+}
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    slug: "ecommerce-platform",
+    title: "E-Commerce Platform",
+    shortDescription: "Full-stack e-commerce platform dengan fitur pembayaran, inventory management, dan admin dashboard.",
+    fullDescription: `Platform e-commerce lengkap yang dirancang untuk mendukung bisnis retail online. Aplikasi ini menggabungkan teknologi modern untuk memberikan pengalaman belanja yang seamless dan sistem backend yang robust.`,
+    thumbnail: "/images/projects/ecommerce-thumb.jpg",
+    images: [
+      "/images/projects/ecommerce-1.jpg",
+      "/images/projects/ecommerce-2.jpg",
+      "/images/projects/ecommerce-3.jpg",
+    ],
+    technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Redis"],
+    role: "Full Stack Developer",
+    duration: "4 months",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/example",
+    features: [
+      "Product catalog dengan filtering & search",
+      "Shopping cart & checkout system",
+      "Payment gateway integration (Stripe)",
+      "Order tracking & notification",
+      "Admin dashboard untuk inventory",
+      "User authentication & profiles",
+      "Review & rating system",
+      "Mobile responsive design",
+    ],
+    challenges: [
+      "Mengoptimalkan query database untuk performa search",
+      "Menangani real-time inventory updates",
+      "Implementasi payment gateway yang aman",
+      "Scaling untuk traffic tinggi",
+    ],
+    solution: `Menggunakan Redis untuk caching, optimasi database queries dengan indexing, dan implementasi message queue untuk async operations. Stripe webhook digunakan untuk payment confirmation yang reliable.`,
+  },
+  {
+    id: 2,
+    slug: "social-media-analytics",
+    title: "Social Media Analytics Dashboard",
+    shortDescription: "Dashboard analytics real-time untuk tracking performance media sosial dengan insights berbasis AI.",
+    fullDescription: `Aplikasi analytics dashboard yang mengintegrasikan data dari berbagai platform media sosial untuk memberikan insights mendalam tentang performa konten dan engagement metrics.`,
+    thumbnail: "/images/projects/analytics-thumb.jpg",
+    images: [
+      "/images/projects/analytics-1.jpg",
+      "/images/projects/analytics-2.jpg",
+    ],
+    technologies: ["Next.js", "Python", "FastAPI", "PostgreSQL", "TensorFlow", "D3.js"],
+    role: "Full Stack Developer & Data Engineer",
+    duration: "3 months",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/example",
+    features: [
+      "Real-time data integration dari Instagram, Twitter, TikTok",
+      "Advanced analytics & insights",
+      "AI-powered trend prediction",
+      "Custom report generation",
+      "Interactive charts & visualizations",
+      "Email notifications untuk anomalies",
+      "Multi-user collaboration",
+      "Export data ke berbagai format",
+    ],
+    challenges: [
+      "API rate limiting dari social media platforms",
+      "Processing large volume data in real-time",
+      "Prediksi trend dengan akurasi tinggi",
+      "Synchronizing data dari multiple sources",
+    ],
+    solution: `Menggunakan background jobs dengan Celery untuk data fetching, Redis untuk caching, dan TensorFlow untuk ML models. Data lake diimplementasikan dengan data warehouse pattern.`,
+  },
+  {
+    id: 3,
+    slug: "ml-customer-churn",
+    title: "Customer Churn Prediction Model",
+    shortDescription: "Machine learning model untuk prediksi customer churn dengan akurasi 95% dan actionable insights.",
+    fullDescription: `Model machine learning yang sophisticated untuk memprediksi kemungkinan customer akan meninggalkan layanan, dilengkapi dengan feature importance analysis dan rekomendasi retention strategy.`,
+    thumbnail: "/images/projects/ml-churn-thumb.jpg",
+    images: [
+      "/images/projects/ml-churn-1.jpg",
+      "/images/projects/ml-churn-2.jpg",
+    ],
+    technologies: ["Python", "Scikit-learn", "XGBoost", "Pandas", "Jupyter", "Flask"],
+    role: "Machine Learning Engineer & Data Scientist",
+    duration: "2 months",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/example",
+    features: [
+      "Data preprocessing & feature engineering",
+      "Multiple ML algorithms comparison",
+      "Model evaluation dengan cross-validation",
+      "Feature importance visualization",
+      "SHAP values untuk model interpretability",
+      "REST API untuk predictions",
+      "Automated retraining pipeline",
+      "Monitoring & performance tracking",
+    ],
+    challenges: [
+      "Class imbalance dalam dataset",
+      "Feature engineering yang optimal",
+      "Model interpretability untuk business stakeholders",
+      "Handling missing values & outliers",
+    ],
+    solution: `Menggunakan SMOTE untuk class imbalance, ensemble methods (XGBoost + LightGBM), dan SHAP untuk model explanation. Cross-validation dengan stratified k-fold untuk evaluasi yang robust.`,
+  },
+  {
+    id: 4,
+    slug: "data-warehouse-etl",
+    title: "Data Warehouse & ETL Pipeline",
+    shortDescription: "Scalable ETL pipeline yang memproses 50GB+ data daily dengan Apache Spark dan Airflow orchestration.",
+    fullDescription: `Enterprise-grade data warehouse solution dengan ETL pipeline yang reliable untuk mengintegrasikan data dari multiple sources, mentransform, dan load ke data warehouse untuk analytics dan reporting.`,
+    thumbnail: "/images/projects/etl-thumb.jpg",
+    images: [
+      "/images/projects/etl-1.jpg",
+      "/images/projects/etl-2.jpg",
+      "/images/projects/etl-3.jpg",
+    ],
+    technologies: ["Apache Spark", "Airflow", "Python", "PostgreSQL", "Kafka", "Docker"],
+    role: "Data Engineer",
+    duration: "5 months",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/example",
+    features: [
+      "Automated ETL pipeline dengan Airflow",
+      "Real-time data streaming dengan Kafka",
+      "Data validation & quality checks",
+      "Incremental loading strategy",
+      "Data lineage tracking",
+      "Error handling & retry logic",
+      "Monitoring & alerting system",
+      "Data versioning & audit logs",
+    ],
+    challenges: [
+      "Handling schema evolution",
+      "Ensuring data consistency across sources",
+      "Managing late-arriving data",
+      "Optimizing Spark jobs untuk performance",
+    ],
+    solution: `Mengimplementasikan medallion architecture (bronze, silver, gold layers), menggunakan Delta Lake untuk ACID transactions, dan Airflow dengan sophisticated dependency management.`,
+  },
+  {
+    id: 5,
+    slug: "seo-optimization-tool",
+    title: "SEO Optimization & Monitoring Tool",
+    shortDescription: "Comprehensive SEO tool untuk keyword tracking, competitor analysis, dan ranking monitoring dengan AI insights.",
+    fullDescription: `Tool lengkap untuk SEO professionals yang menyediakan fitur comprehensive untuk tracking keyword rankings, analyzing competitors, dan memberikan actionable recommendations berbasis AI.`,
+    thumbnail: "/images/projects/seo-thumb.jpg",
+    images: [
+      "/images/projects/seo-1.jpg",
+      "/images/projects/seo-2.jpg",
+    ],
+    technologies: ["Next.js", "Node.js", "Python", "PostgreSQL", "Selenium", "OpenAI API"],
+    role: "Full Stack Developer & SEO Specialist",
+    duration: "3 months",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/example",
+    features: [
+      "Real-time keyword ranking tracking",
+      "Competitor analysis & monitoring",
+      "Backlink analysis tool",
+      "On-page SEO audit",
+      "AI-powered content suggestions",
+      "Rank change alerts",
+      "Monthly performance reports",
+      "Bulk keyword upload & management",
+    ],
+    challenges: [
+      "Scraping rankings dari search engines secara reliable",
+      "Handling rate limits & anti-bot measures",
+      "Providing real-time data dengan latency rendah",
+      "Accurate competitor identification",
+    ],
+    solution: `Menggunakan Selenium untuk scraping dengan proxy rotation, caching strategy untuk minimize API calls, dan background jobs untuk scheduled updates.`,
+  },
+  {
+    id: 6,
+    slug: "microservices-platform",
+    title: "Microservices Architecture Platform",
+    shortDescription: "Scalable microservices platform dengan 8 independent services, Kubernetes orchestration, dan event-driven architecture.",
+    fullDescription: `Enterprise microservices platform yang demonstrasi best practices dalam building distributed systems dengan multiple independent services, inter-service communication, dan container orchestration.`,
+    thumbnail: "/images/projects/microservices-thumb.jpg",
+    images: [
+      "/images/projects/microservices-1.jpg",
+      "/images/projects/microservices-2.jpg",
+      "/images/projects/microservices-3.jpg",
+    ],
+    technologies: ["Node.js", "Python", "Docker", "Kubernetes", "RabbitMQ", "PostgreSQL", "Redis"],
+    role: "Full Stack Developer & DevOps Engineer",
+    duration: "4 months",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/example",
+    features: [
+      "8 independent microservices",
+      "API Gateway dengan rate limiting & authentication",
+      "Event-driven architecture dengan RabbitMQ",
+      "Service discovery & load balancing",
+      "Distributed tracing & monitoring",
+      "Auto-scaling policies",
+      "Blue-green deployment strategy",
+      "Centralized logging dengan ELK stack",
+    ],
+    challenges: [
+      "Managing service-to-service communication",
+      "Distributed transaction handling",
+      "Network resilience & timeout configuration",
+      "Debugging distributed systems",
+    ],
+    solution: `Menggunakan API Gateway pattern, event sourcing untuk eventual consistency, circuit breaker pattern untuk resilience, dan Kubernetes health checks untuk auto-recovery.`,
+  },
+];
