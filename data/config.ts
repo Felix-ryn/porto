@@ -1,26 +1,18 @@
 export const config = {
-  name: "Your Name",
-  title: "Full Stack Developer & SEO Specialist",
-  subtitle: "Data Engineer | ML Engineer | Database Expert",
-  bio: "Passionate about building scalable web applications, optimizing data pipelines, and leveraging machine learning to solve real-world problems.",
+  name: "Felix Ryan",
+  title: "Backend Developer & Data Engineer",
+  subtitle: "Building reliable systems and transforming data",
+  bio: "Backend Developer and Data Engineer passionate about building reliable systems, transforming data, and developing practical technology solutions.",
   
-  email: "your.email@example.com",
-  phone: "+62 8xx xxxx xxxx",
+  email: "felixagusta24@mgail.com",
+  phone: "+628179482485",
   location: "Indonesia",
   
-  cvLink: "https://drive.google.com/file/d/141mYr0fsukT8iucqV7yvs6e4F8TlEK6g/view?usp=drive_link",
+  cvLink: "https://drive.google.com/file/d/1nhrFU2sf0lkN59R-yFNl2tofRQAlCi1i/view?usp=sharing",
   
   social: {
-    github: "https://github.com/yourprofile",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    email: "your.email@example.com",
-  },
-  
-  colors: {
-    primary: "#00B4D8",    // Biru cerah
-    secondary: "#0A4F7A",  // Biru tua
-    accent: "#00D4FF",     // Highlight
-    light: "#F0F7FF",      // Background terang
-    dark: "#1A1A1A",       // Text gelap
+    github: "https://github.com/Felix-ryn",
+    linkedin: "https://www.linkedin.com/in/felix-ryan-agusta-4ab72927a/",
+    email: "felixagusta24@gmail.com",
   },
 };

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ProjectCard from "@/components/ProjectCard";
+import Link from "next/link";
+import { IconExternalLink, IconGithub } from "@/components/Icons";
 import { projects } from "@/data/projects";
 
 export default function ProjectsPage() {
@@ -8,39 +9,35 @@ export default function ProjectsPage() {
     <>
       <Navbar />
 
-      {/* Header Section */}
-      <section className="pt-36 pb-12">
-        <div className="section-container text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Projects
-          </h1>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            A showcase of my recent work in full-stack development, data engineering, machine learning, and more.
-          </p>
+      <main id="content" className="portfolio-main archive-main">
+        <header className="archive-header">
+          <h1 className="big-heading">Archive</h1>
+          <p className="archive-subtitle">A big list of things I&apos;ve worked on</p>
+        </header>
+        <div className="archive-table-wrap">
+          <table>
+            <thead>
+              <tr><th>Year</th><th>Title</th><th className="hide-mobile">Made at</th><th className="hide-mobile">Built with</th><th>Link</th></tr>
+            </thead>
+            <tbody>
+              {projects.map((project, index) => (
+                <tr key={project.id} className="archive-row" style={{ animationDelay: `${index * 30}ms` }}>
+                  <td className="archive-year">{project.year ?? ""}</td>
+                  <td className="archive-title"><Link href={`/projects/${project.slug}`}>{project.title}</Link></td>
+                  <td className="hide-mobile">{project.company ?? ""}</td>
+                  <td className="archive-tech hide-mobile">{project.technologies.join(" · ")}</td>
+                  <td>
+                    <div className="archive-links">
+                      {project.githubLink && <a href={project.githubLink} aria-label="GitHub"><IconGithub className="h-5 w-5" /></a>}
+                      {project.demoLink && <a href={project.demoLink} target="_blank" rel="noopener noreferrer" aria-label="External link"><IconExternalLink className="h-5 w-5" /></a>}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </section>
-
-      {/* Projects List */}
-      <section className="py-12">
-        <div className="section-container">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-white border-t border-slate-200">
-        <div className="section-container text-center space-y-5">
-          <h2 className="text-3xl md:text-4xl font-bold">Interested in Working Together?</h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            I&apos;m always open to new opportunities and collaborations. Let&apos;s connect!
-          </p>
-          <a href="/contact" className="btn-primary inline-block">
-            Get In Touch
-          </a>
-        </div>
-      </section>
+      </main>
 
       <Footer />
     </>

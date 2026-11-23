@@ -92,6 +92,11 @@ export const IconExternalLink = (p: IconProps) =>
     <path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
   </>);
 
+export const IconFolder = (p: IconProps) =>
+  base(p, <>
+    <path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H9l2 2h7.5A2.5 2.5 0 0 1 21 8.5v8A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5Z" />
+  </>);
+
 export const IconLink = (p: IconProps) =>
   base(p, <>
     <path d="M9 15 15 9" />

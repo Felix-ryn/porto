@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Link from "next/link";
 import { Project } from "@/data/projects";
 import { getProjectIcon, IconArrowRight, IconCheckCircle } from "@/components/Icons";
@@ -15,7 +16,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     <div className="mb-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Image Section - always first on mobile, alternates on desktop */}
-        <div className={isImageLeft ? "md:order-1" : "md:order-2"}>
+        <div className={clsx(isImageLeft ? "md:order-1" : "md:order-2")}>
           <div className="h-64 md:h-80 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-center group">
             <div className="text-center">
               <ProjectIcon className="w-14 h-14 text-blue-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
@@ -25,7 +26,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         {/* Content Section */}
-        <div className={isImageLeft ? "md:order-2" : "md:order-1"}>
+        <div className={clsx(isImageLeft ? "md:order-2" : "md:order-1")}>
           <div className="space-y-4">
             <div>
               <h3 className="text-2xl font-bold mb-1">

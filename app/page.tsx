@@ -1,181 +1,49 @@
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import { config } from "@/data/config";
-import Link from "next/link";
-import { projects } from "@/data/projects";
-import { IconGithub, IconLinkedin, IconMail, IconUser, IconChevronDown, getProjectIcon } from "@/components/Icons";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-
-      {/* Hero Section */}
-      <section className="pt-36 pb-20 md:pt-44 md:pb-28">
-        <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            {/* Left: Text Content */}
-            <div className="space-y-7">
-              <div className="space-y-3">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  Hi, I&apos;m{" "}
-                  <span className="gradient-text">{config.name}</span>
-                </h1>
-                <p className="text-xl md:text-2xl text-blue-600 font-semibold">
-                  {config.title}
-                </p>
-                <p className="text-base text-slate-500">
-                  {config.subtitle}
-                </p>
-              </div>
-
-              <p className="text-slate-600 text-lg leading-relaxed max-w-lg">
-                {config.bio}
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4">
-                <Link href="/projects" className="btn-primary">
-                  View My Work
-                </Link>
-                <a
-                  href={config.cvLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary"
-                >
-                  Download CV
-                </a>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex gap-3 pt-2">
-                <a
-                  href={config.social.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-slate-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-colors"
-                  title="GitHub"
-                >
-                  <IconGithub className="w-5 h-5" />
-                </a>
-                <a
-                  href={config.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-slate-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-colors"
-                  title="LinkedIn"
-                >
-                  <IconLinkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href={`mailto:${config.email}`}
-                  className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-slate-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-colors"
-                  title="Email"
-                >
-                  <IconMail className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-
-            {/* Right: Hero Photo Placeholder */}
-            <div className="flex justify-center md:justify-end">
-              <div className="w-72 h-72 md:w-96 md:h-96 rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center text-slate-400">
-                <IconUser className="w-20 h-20 mb-3" />
-                <p className="text-sm font-medium">Your photo here</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Scroll down hint - smooth scroll anchor */}
-          <div className="hidden md:flex justify-center mt-16">
-            <a
-              href="#featured-projects"
-              aria-label="Scroll to featured projects"
-              className="text-slate-400 hover:text-blue-600 transition-colors animate-bounce"
-            >
-              <IconChevronDown className="w-6 h-6" />
-            </a>
-          </div>
+      <main id="content" className="portfolio-main">
+        <div className="side-social">
+          <a href="https://github.com/Felix-ryn" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.699-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.03 1.532 1.03.892 1.529 2.341 1.087 2.91.831.091-.646.35-1.087.636-1.337-2.221-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.337-.012 2.415-.012 2.744 0 .267.18.579.688.481A10.01 10.01 0 0 0 22 12c0-5.523-4.477-10-10-10Z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/felix-ryan-agusta-4ab72927a/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/felixryn_/" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+            </svg>
+          </a>
+          <a href="mailto:felixagusta24@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z" />
+            </svg>
+          </a>
+          <span />
         </div>
-      </section>
-
-      {/* Featured Projects */}
-      <section id="featured-projects" className="py-20 bg-white border-y border-slate-200 scroll-mt-20">
-        <div className="section-container">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">
-              Featured Projects
-            </h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">
-              Showcase of my recent work in full-stack development, data engineering, and machine learning
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {projects.slice(0, 3).map((project) => {
-              const ProjectIcon = getProjectIcon(project.id);
-              return (
-                <Link
-                  key={project.id}
-                  href={`/projects/${project.slug}`}
-                  className="card group overflow-hidden flex flex-col"
-                >
-                  <div className="h-36 bg-slate-50 border-b border-slate-200 flex items-center justify-center">
-                    <ProjectIcon className="w-10 h-10 text-blue-600 group-hover:scale-110 transition-transform" />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-lg font-bold mb-2 group-hover:text-blue-600 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-slate-500 text-sm mb-4 line-clamp-2 flex-1">
-                      {project.shortDescription}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.slice(0, 3).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-
-          <div className="text-center">
-            <Link href="/projects" className="btn-secondary">
-              View All Projects
-            </Link>
-          </div>
+        <div className="side-email">
+          <a href="mailto:felixagusta24@gmail.com">felixagusta24@gmail.com</a>
+          <span />
         </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20">
-        <div className="section-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-            {[
-              { number: "6+", label: "Projects Completed" },
-              { number: "3+", label: "Years Experience" },
-              { number: "10+", label: "Technologies" },
-              { number: "100%", label: "Client Satisfaction" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-blue-600 mb-1">
-                  {stat.number}
-                </p>
-                <p className="text-slate-500 text-sm">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Contact />
+      </main>
       <Footer />
     </>
   );

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import BackToTop from "@/components/BackToTop";
 import "./globals.css";
@@ -13,22 +13,32 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "Full Stack Developer & Data Engineer | Portfolio",
-  description: "Professional portfolio showcasing full-stack development, data engineering, ML, SEO expertise, and database optimization. Projects, education, skills, and more.",
-  keywords: "Full Stack Developer, Data Engineer, Machine Learning, SEO, Portfolio",
-  authors: [{ name: "Your Name" }],
-  viewport: "width=device-width, initial-scale=1",
-  robots: "index, follow",
+  title: "Felix Ryan",
+  description: "Backend Developer and Data Engineer passionate about building reliable systems, transforming data, and developing practical technology solutions. Explore my projects, skills, and experience.",
+  keywords: "Backend Developer, Data Engineer, Machine Learning, Python, Node.js, Portfolio",
+  authors: [{ name: "Felix Ryan" }],
+    robots: "index, follow",
+  openGraph: {
+    title: "Felix Ryan | Backend Developer & Data Engineer",
+    description: "Backend Developer and Data Engineer passionate about building reliable systems and transforming data.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
     >
-      <body className="min-h-screen flex flex-col">
+      <body suppressHydrationWarning className="min-h-screen flex flex-col bg-[#0a192f]">
         {children}
         <BackToTop />
       </body>
