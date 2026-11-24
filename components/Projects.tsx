@@ -5,6 +5,15 @@ import { projects } from "@/data/projects";
 import { IconExternalLink, IconFolder, IconGithub } from "@/components/Icons";
 
 export default function Projects() {
+  const noteworthyProjects = [
+    { title: "Data Platform", description: "A placeholder for a future data platform project.", tech: ["Python", "SQL", "Data"], github: "#" },
+    { title: "Web Application", description: "A placeholder for a future web application project.", tech: ["React", "TypeScript", "API"], github: "#" },
+    { title: "Machine Learning Study", description: "A placeholder for a future machine learning project.", tech: ["Python", "ML", "Jupyter"], github: "#" },
+    { title: "Automation Toolkit", description: "A placeholder for a future automation and tooling project.", tech: ["Node.js", "Docker", "CLI"], github: "#" },
+    { title: "Analytics Dashboard", description: "A placeholder for a future analytics dashboard project.", tech: ["Next.js", "Charts", "PostgreSQL"], github: "#" },
+    { title: "Open Source Experiment", description: "A placeholder for a future open-source experiment.", tech: ["Open Source", "JavaScript"], github: "#" },
+  ];
+
   return (
     <section id="projects" className="scroll-mt-24">
       <h2 className="numbered-heading">Some Things I&apos;ve Built</h2>
@@ -44,6 +53,28 @@ export default function Projects() {
       )}
       <div className="mt-20 text-center">
         <Link href="/projects" className="outline-button">View the archive</Link>
+      </div>
+
+      <div className="noteworthy-projects">
+        <h3 className="noteworthy-heading">Other Noteworthy Projects</h3>
+        <p className="noteworthy-subtitle">A selection of smaller projects and experiments.</p>
+        <ul className="noteworthy-grid">
+          {noteworthyProjects.map(project => (
+            <li key={project.title} className="noteworthy-card">
+              <div className="noteworthy-card-top">
+                <IconFolder className="h-9 w-9 text-[var(--green)]" />
+                <a href={project.github} aria-label={`${project.title} GitHub`} className="hover:text-[var(--green)]">
+                  <IconGithub className="h-5 w-5" />
+                </a>
+              </div>
+              <h4>{project.title}</h4>
+              <p>{project.description}</p>
+              <ul>
+                {project.tech.map(item => <li key={item}>{item}</li>)}
+              </ul>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

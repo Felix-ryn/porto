@@ -132,6 +132,22 @@
 .outline-button:hover {
   background: rgba(100, 255, 218, 0.1);
   transform: translateY(-3px);
+  box-shadow: 0 12px 25px -12px rgba(100, 255, 218, 0.8);
+}
+
+.profile-photo-frame {
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.3s ease;
+}
+
+.profile-photo-frame:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 30px -18px rgba(100, 255, 218, 0.85);
+}
+
+.profile-photo-frame.profile-photo-color img {
+  filter: none;
+  mix-blend-mode: normal;
+  grayscale: 0;
 }
 
 .side-social {
@@ -403,6 +419,85 @@
   height: 100%;
 }
 
+.noteworthy-projects {
+  margin-top: 140px;
+}
+
+.noteworthy-heading {
+  margin: 0 0 8px;
+  color: var(--lightest-slate);
+  text-align: center;
+  font-size: clamp(24px, 5vw, 32px);
+}
+
+.noteworthy-subtitle {
+  margin: 0 0 45px;
+  color: var(--slate);
+  text-align: center;
+  font-size: 17px;
+}
+
+.noteworthy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.noteworthy-card {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: 4px;
+  background: var(--light-navy);
+  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.noteworthy-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 35px -18px rgba(100, 255, 218, 0.45);
+}
+
+.noteworthy-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.noteworthy-card h4 {
+  margin: 0 0 12px;
+  color: var(--lightest-slate);
+  font-size: 20px;
+}
+
+.noteworthy-card:hover h4 {
+  color: var(--green);
+}
+
+.noteworthy-card p {
+  flex: 1;
+  margin: 0 0 22px;
+  color: var(--light-slate);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.noteworthy-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--light-slate);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
 .project-detail-main {
   max-width: 1000px;
   padding-top: 180px;
@@ -637,6 +732,12 @@
   .hide-mobile {
     display: none;
   }
+  .noteworthy-projects {
+    margin-top: 100px;
+  }
+  .noteworthy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .project-detail-main {
     padding-top: 130px;
   }
@@ -655,6 +756,9 @@
   .portfolio-main { padding: 0 25px; }
   .portfolio-main section { padding: 60px 0; }
   .portfolio-main .numbered-heading:after { width: 100%; }
+  .noteworthy-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Custom scrollbar */

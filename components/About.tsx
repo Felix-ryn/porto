@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { aboutIntro, highlights } from "@/data/about";
 import {
   IconServer,
@@ -12,6 +15,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export default function About() {
+  const [isColorShown, setIsColorShown] = useState(false);
+
   return (
     <section id="about" className="scroll-mt-24 !max-w-[900px]">
       <h2 className="numbered-heading">About Me</h2>
@@ -28,11 +33,24 @@ export default function About() {
           </ul>
         </div>
         <div className="relative max-w-[300px] max-[768px]:mt-12 max-[768px]:mx-auto max-[768px]:w-[70%]">
-          <div className="relative w-full rounded-sm bg-[var(--green)] before:absolute before:inset-0 before:bg-[var(--navy)] before:mix-blend-screen after:absolute after:-z-10 after:top-[14px] after:left-[14px] after:w-full after:h-full after:border-2 after:border-[var(--green)] after:rounded-sm">
-            <div className="aspect-square grid place-items-center rounded-sm border border-[var(--green)] bg-[var(--light-navy)] text-[var(--green)] font-mono text-5xl">
-              FR
-            </div>
-          </div>
+          <button
+            type="button"
+            aria-label={isColorShown ? "Apply green photo filter" : "Remove green photo filter"}
+            aria-pressed={isColorShown}
+            onClick={() => setIsColorShown((shown) => !shown)}
+            className={`profile-photo-frame relative block w-full aspect-[8/9] rounded-sm bg-[var(--green)] after:absolute after:-z-10 after:top-[14px] after:left-[14px] after:w-full after:h-full after:border-2 after:border-[var(--green)] after:rounded-sm ${
+              isColorShown ? "profile-photo-color" : ""
+            }`}
+          >
+            {!isColorShown && (
+              <span className="absolute inset-0 z-10 rounded-sm bg-[var(--navy)] mix-blend-screen transition-opacity duration-300" />
+            )}
+            <img
+              src="/images/profile.jpeg"
+              alt="Felix Ryan"
+              className="relative z-[1] h-full w-full rounded-sm object-cover object-top grayscale contrast-100 mix-blend-multiply transition-all duration-300"
+            />
+          </button>
         </div>
       </div>
     </section>

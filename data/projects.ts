@@ -108,6 +108,49 @@ export const projects: Project[] = [
     year: "2026",
     company: "Independent",
   },
+  {
+    id: 3,
+    slug: "jejak-sampah",
+    title: "Jejak Sampah",
+    shortDescription:
+      "A waste management analytics dashboard that turns SIPSN 2025 data into interactive insights about waste generation, regional performance, and environmental conditions across Indonesia.",
+    fullDescription:
+      "Jejak Sampah is a web-based environmental analytics platform designed to make Indonesian waste management data easier to explore. It combines interactive visualizations, regional comparisons, clustering analysis, waste composition and source analysis, rankings, and an AI-powered chatbot for conversational exploration of environmental statistics.",
+    thumbnail: "/images/projects/jejaksampah.png",
+    images: [
+      "/images/projects/jejaksampah.png",
+    ],
+    technologies: [
+      "React",
+      "Data Visualization",
+      "SIPSN 2025",
+      "Regional Clustering",
+      "AI Chatbot",
+    ],
+    role: "Data Analytics & Web Developer",
+    duration: "Independent Project",
+    githubLink: "https://github.com/Felix-ryn/Dashboard-Sebaran-Sampah-Indonesia.git",
+    demoLink: "https://www.jejaksampah.my.id/",
+    features: [
+      "Interactive national waste analytics dashboard",
+      "Managed and unmanaged waste comparison",
+      "Regional search, filtering, and comparison",
+      "Regional clustering analysis",
+      "Waste composition and source exploration",
+      "Regional performance rankings",
+      "AI-powered environmental data chatbot",
+      "Interactive charts for SIPSN 2025 data",
+    ],
+    challenges: [
+      "Presenting complex environmental statistics in an accessible interface",
+      "Comparing different regional conditions consistently",
+      "Making analytical insights useful for non-technical users",
+    ],
+    solution:
+      "Transformed SIPSN 2025 datasets into a focused analytics experience with interactive charts, regional filters, clustering views, rankings, and conversational access to the data.",
+    year: "2026",
+    company: "Independent",
+  },
 ];
 
 export const allProjects: Project[] = [];

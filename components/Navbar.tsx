@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { config } from "@/data/config";
 
 const navLinks = [
   { href: "#about", label: "About", id: "about" },
@@ -102,12 +103,14 @@ export default function Navbar() {
 
           {/* CTA Button & Mobile Menu */}
         <div className="flex items-center gap-4">
-          <button
-            onClick={() => handleNavClick("contact")}
+          <a
+            href={config.cvLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="outline-button hidden md:block !min-h-[42px] px-4"
           >
             Resume
-          </button>
+          </a>
 
           {/* Mobile menu button */}
           <button
@@ -153,12 +156,14 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
-            <button
-              onClick={() => handleNavClick("contact")}
-              className="block w-full px-4 py-3 bg-[#3B82F6] text-[#F8FAFC] rounded-lg font-semibold text-center hover:bg-[#60A5FA] transition-all duration-300 mt-4 cursor-pointer"
+            <a
+              href={config.cvLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="outline-button block w-full mt-4 text-center"
             >
-              Let&apos;s Talk
-            </button>
+              Resume
+            </a>
           </div>
         </div>
       )}
